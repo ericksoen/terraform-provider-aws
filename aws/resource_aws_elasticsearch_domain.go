@@ -1025,6 +1025,11 @@ func esCognitoOptionsDiffSuppress(k, old, new string, d *schema.ResourceData) bo
 	if old == "1" && new == "0" {
 		return true
 	}
+
+	if old == "" && new != "" {
+		return true
+	}
+
 	return false
 }
 
